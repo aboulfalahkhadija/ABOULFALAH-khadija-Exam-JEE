@@ -8,8 +8,8 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2026-05-11T16:18:18+0100",
-    comments = "version: 1.5.5.Final, compiler: javac, environment: Java 21.0.6 (Eclipse Adoptium)"
+    date = "2026-05-11T16:51:06+0100",
+    comments = "version: 1.5.5.Final, compiler: Eclipse JDT (IDE) 3.46.0.v20260407-0427, environment: Java 21.0.10 (Eclipse Adoptium)"
 )
 @Component
 public class RentalMapperImpl implements RentalMapper {
@@ -25,9 +25,9 @@ public class RentalMapperImpl implements RentalMapper {
         rentalDTO.setVehicleId( rentalVehicleId( rental ) );
         rentalDTO.setVehicleMarque( rentalVehicleMarque( rental ) );
         rentalDTO.setVehicleModele( rentalVehicleModele( rental ) );
-        rentalDTO.setId( rental.getId() );
         rentalDTO.setDateDebut( rental.getDateDebut() );
         rentalDTO.setDateFin( rental.getDateFin() );
+        rentalDTO.setId( rental.getId() );
         rentalDTO.setPrixTotal( rental.getPrixTotal() );
 
         return rentalDTO;
@@ -41,9 +41,9 @@ public class RentalMapperImpl implements RentalMapper {
 
         Rental.RentalBuilder rental = Rental.builder();
 
-        rental.id( rentalDTO.getId() );
         rental.dateDebut( rentalDTO.getDateDebut() );
         rental.dateFin( rentalDTO.getDateFin() );
+        rental.id( rentalDTO.getId() );
         rental.prixTotal( rentalDTO.getPrixTotal() );
 
         return rental.build();
