@@ -1,0 +1,47 @@
+@startuml
+abstract class me.aboulfalah.khadija.examjee.entities.Vehicle {
+- Long id
+- String marque
+- String modele
+- String matricule
+- Double prixParJour
+- Date dateMiseEnService
+- VehicleStatus statut
+- Agency agency
+- List<Rental> rentals
+}
+
+class me.aboulfalah.khadija.examjee.entities.Rental {
+- Long id
+- Date dateDebut
+- Date dateFin
+- Double prixTotal
+- Vehicle vehicle
+}
+
+class me.aboulfalah.khadija.examjee.entities.Car {
+- Integer nombrePortes
+- FuelType typeCarburant
+- Gearbox boiteVitesse
+}
+
+class me.aboulfalah.khadija.examjee.entities.Agency {
+- Long id
+- String nom
+- String adresse
+- String ville
+- String telephone
+- List<Vehicle> vehicles
+}
+
+class me.aboulfalah.khadija.examjee.entities.Motorcycle {
+- Double cylindree
+- MotoType typeMoto
+- boolean casqueInclus
+}
+
+
+
+me.aboulfalah.khadija.examjee.entities.Vehicle <|-- me.aboulfalah.khadija.examjee.entities.Car
+me.aboulfalah.khadija.examjee.entities.Vehicle <|-- me.aboulfalah.khadija.examjee.entities.Motorcycle
+@enduml
